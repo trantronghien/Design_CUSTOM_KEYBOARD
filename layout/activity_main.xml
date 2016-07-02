@@ -1,0 +1,109 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <android.support.v7.widget.Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/primary"
+            android:minHeight="?attr/actionBarSize"
+            app:titleTextAppearance="@style/AppTheme.Toolbar.Title" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ScrollView
+                android:id="@+id/scroll_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_above="@+id/keyboard_view"
+                android:layout_marginBottom="8dp"
+                android:background="#ffffff"
+                android:padding="16dp"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!--Content of the ScrollView-->
+                    <TextView
+                        android:id="@+id/before_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textSize="15dp"
+                        android:text="@string/before_value"
+                        android:textColor="@color/primary_text"
+                        android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/before_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bottom_border"
+                        android:inputType="numberDecimal" />
+                    <TextView
+                        android:id="@+id/percent_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textSize="15dp"
+                        android:text="@string/percent_value"
+                        android:textColor="@color/primary_text"
+                        android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/percentage_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bottom_border"
+                        android:inputType="numberDecimal" />
+                    <TextView
+                        android:id="@+id/after_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textSize="15dp"
+                        android:text="@string/after_value"
+                        android:textColor="@color/primary_text"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/percent_result"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:textColor="@color/primary_text"
+                        android:text="@string/no_text"
+                        android:padding="16dp"
+                        android:textSize="18dp"
+                        android:layout_weight="1"
+                        android:background="@color/primary_light"/>
+                </LinearLayout>
+            </ScrollView>
+            <android.inputmethodservice.KeyboardView
+                android:id="@+id/keyboard_view"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_above="@+id/relativeAd"
+                android:layout_centerHorizontal="true"
+                android:focusable="true"
+                android:background="@android:color/transparent"
+                android:keyBackground="@color/primary"
+                android:focusableInTouchMode="true"
+                android:visibility="gone" />
+            <LinearLayout
+                android:id="@+id/relativeAd"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/divider"
+                android:gravity="center"
+                android:orientation="vertical">
+                
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</merge>
